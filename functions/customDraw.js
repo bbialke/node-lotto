@@ -1,5 +1,7 @@
 const random = require('random')
-async function customDraw(guess, count, minValue, maxValue, bonus) {
+async function customDraw({
+  guess, count, minValue, maxValue, bonus
+}) {
 
   //Check if bonus number should be drawn
   let drawBonus = false;
