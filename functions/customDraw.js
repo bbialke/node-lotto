@@ -44,6 +44,18 @@ async function customDraw({
   if(matches.length == 0){
     matches = 'none';
   }
+  //Check bonus number matches
+  let bonusMatch=[];
+  if(drawBonus){
+    guess.forEach((value) => {
+      if(value == bonusNumber){
+        bonusMatch.push(value);
+      }
+    });
+  }
+  if(bonusMatch.length == 0){
+    bonusMatch = 'none';
+  }
   var output = {
     winningNumbers: winningNumbers,
     guess: guess,
@@ -51,6 +63,7 @@ async function customDraw({
   }
   if(drawBonus){
     output.bonusNumber = bonusNumber;
+    output.bonusMatch = bonusMatch;
   }
   return output;
 }
