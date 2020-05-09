@@ -4,7 +4,7 @@ async function quickDraw(guess) {
   //Before even checking the guess, get the winning numbers
   let winningNumbers=[];
   let i = 0;
-  while(i <= 6){
+  while(i < 6){
     winningNumbers.push(random.int(min = 1, max = 15));
     i++;
   }
