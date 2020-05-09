@@ -47,6 +47,16 @@ describe('testing errors in parameters- customDraw', () => {
       }
     )).to.be.rejectedWith(Error);
   });
+  it('should be rejected with error because bonus is not a boolean', () => {
+    return expect(customDraw(
+      {
+        guess: 'guess',
+        count: 10,
+        minValue: 1,
+        bonus: 'sure'
+      }
+    )).to.be.rejectedWith(Error);
+  });
 });
 describe('testing successful queries- customDraw', () => {
   it('should return JSON array without error', async () => {

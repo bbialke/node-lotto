@@ -6,11 +6,14 @@ async function customDraw({
   //Check if bonus number should be drawn
   let drawBonus = false;
   let bonusNumber;
+  if(typeof bonus !== "boolean"){
+    throw new Error ('bonus must be either true or false');
+  }
   if(bonus){
     drawBonus = true;
   }
   if(!count){
-    throw new Error ('Please specifiy the number of numbers to be drawn');
+    throw new Error ('Please specifiy the number of winning numbers to be drawn');
   }
   //Before even checking the guess, get the winning numbers
   let winningNumbers=[];
